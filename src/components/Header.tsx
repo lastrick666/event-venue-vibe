@@ -7,14 +7,14 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
-            <Calendar className="h-5 w-5 text-white" />
+        <Link to="/home" className="flex items-center space-x-2 group cursor-pointer">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center animate-logo-pulse hover:animate-logo-rotate transition-all duration-300 shadow-md hover:shadow-lg">
+            <Calendar className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
           </div>
-          <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
             GoEvent
           </span>
-        </div>
+        </Link>
 
         {/* Search Bar */}
         <div className="hidden md:flex flex-1 max-w-lg mx-8">
@@ -31,29 +31,32 @@ const Header = () => {
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
           <div className="hidden lg:flex items-center space-x-6">
-            <Link to="/home" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/home" className="text-sm font-medium hover:text-primary transition-all duration-300 relative group">
               Esplora Eventi
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link to="/host/create-event" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/host/create-event" className="text-sm font-medium hover:text-primary transition-all duration-300 relative group">
               Diventa Host
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#" className="text-sm font-medium hover:text-primary transition-all duration-300 relative group">
               Aiuto
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </div>
           
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon">
-              <Heart className="h-4 w-4" />
+            <Button variant="ghost" size="icon" className="hover:scale-110 transition-all duration-300 hover:bg-primary/10">
+              <Heart className="h-4 w-4 hover:text-primary transition-colors duration-300" />
             </Button>
             <Link to="/login">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="hover:scale-105 transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-md">
                 <User className="h-4 w-4 mr-2" />
                 Accedi
               </Button>
             </Link>
             <Link to="/register">
-              <Button variant="hero" size="sm">
+              <Button variant="hero" size="sm" className="hover:scale-105">
                 Registrati
               </Button>
             </Link>

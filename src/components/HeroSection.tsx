@@ -68,8 +68,8 @@ const HeroSection = () => {
             </div>
             
             <div className="flex items-end">
-              <Button variant="hero" className="w-full py-2.5">
-                <Search className="h-4 w-4 mr-2" />
+              <Button variant="hero" className="w-full py-2.5 hover:scale-105 transform transition-all duration-300 group">
+                <Search className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                 Cerca Eventi
               </Button>
             </div>
@@ -79,13 +79,21 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/home/#events">
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" className="hover:scale-105 transform transition-all duration-300">
               Esplora Eventi
             </Button>
           </Link>
           <Link to="/host/create-event">
-            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-              Organizza un Evento
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-white/30 text-white hover:bg-white/10 hover:scale-105 transform transition-all duration-300 hover:border-white/50 hover:shadow-2xl backdrop-blur-sm bg-white/5 group relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center">
+                <Calendar className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                Organizza un Evento
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
           </Link>
         </div>

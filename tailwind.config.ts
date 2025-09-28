@@ -113,6 +113,34 @@ export default {
         "slide-out-right": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(100%)" }
+        },
+        "logo-pulse": {
+          "0%, 100%": { 
+            transform: "scale(1)",
+            boxShadow: "0 0 0 0 hsl(var(--primary) / 0.4)"
+          },
+          "50%": { 
+            transform: "scale(1.05)",
+            boxShadow: "0 0 20px 8px hsl(var(--primary) / 0.2)"
+          }
+        },
+        "logo-rotate": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" }
+        },
+        "button-hover": {
+          "0%": { 
+            transform: "translateY(0) scale(1)",
+            boxShadow: "0 4px 14px 0 hsl(var(--primary) / 0.25)"
+          },
+          "100%": { 
+            transform: "translateY(-2px) scale(1.02)",
+            boxShadow: "0 8px 25px 0 hsl(var(--primary) / 0.35)"
+          }
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
         }
       },
       animation: {
@@ -125,7 +153,11 @@ export default {
         "slide-in-right": "slide-in-right 0.3s ease-out",
         "slide-out-right": "slide-out-right 0.3s ease-out",
         "enter": "fade-in 0.3s ease-out, scale-in 0.2s ease-out",
-        "exit": "fade-out 0.3s ease-out, scale-out 0.2s ease-out"
+        "exit": "fade-out 0.3s ease-out, scale-out 0.2s ease-out",
+        "logo-pulse": "logo-pulse 3s ease-in-out infinite",
+        "logo-rotate": "logo-rotate 20s linear infinite",
+        "button-hover": "button-hover 0.3s ease-out forwards",
+        "shimmer": "shimmer 2s ease-in-out infinite"
       },
     },
   },

@@ -60,7 +60,7 @@ const Login = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-md mx-auto">
           {/* Back Button */}
-          <Link to="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
+          <Link to="/home" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Torna alla Home
           </Link>
@@ -74,7 +74,7 @@ const Login = () => {
               </div>
               <CardTitle className="text-2xl font-bold">Bentornato!</CardTitle>
               <CardDescription>
-                Accedi al tuo account EventHub per continuare
+                Accedi al tuo account GoEvent per continuare
               </CardDescription>
             </CardHeader>
             
@@ -169,6 +169,18 @@ const Login = () => {
                   Accedi
                 </Button>
               </form>
+
+              {/* Guest Access */}
+              <div className="text-center">
+                <Link to="/home">
+                  <Button variant="outline" className="w-full">
+                    🎭 Accedi come Ospite
+                  </Button>
+                </Link>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Esplora eventi senza registrarti
+                </p>
+              </div>
 
               <div className="text-center">
                 <span className="text-sm text-muted-foreground">

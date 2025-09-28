@@ -11,8 +11,10 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import EventPreview from "@/components/EventPreview";
 import { useToast } from "@/hooks/use-toast";
 import { 
   ArrowLeft, Calendar as CalendarIcon, MapPin, Euro, Users, 
@@ -61,6 +63,7 @@ const CreateEvent = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(1);
+  const [showPreview, setShowPreview] = useState(false);
   const totalSteps = 6;
   
   const [formData, setFormData] = useState<EventFormData>({
@@ -144,10 +147,18 @@ const CreateEvent = () => {
   };
 
   const handlePreview = () => {
-    toast({
-      title: "Anteprima",
-      description: "Funzionalità anteprima in arrivo!"
-    });
+    // Check if event has minimum required data
+    if (!formData.title.trim()) {
+      toast({
+        title: "Anteprima non disponibile",
+        description: "Inserisci almeno il titolo dell'evento per vedere l'anteprima",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Show preview in a modal or new page
+    setShowPreview(true);
   };
 
   const handlePublish = () => {
@@ -699,6 +710,16 @@ const CreateEvent = () => {
           </div>
         </div>
       </div>
+
+      {/* Preview Dialog */}
+      <Dialog open={showPreview} onOpenChange={setShowPreview}>
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Anteprima Evento</DialogTitle>
+          </DialogHeader>
+          <EventPreview eventData={formData} />
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>

@@ -12,7 +12,7 @@ const Header = () => {
             <Calendar className="h-5 w-5 text-white" />
           </div>
           <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            EventHub
+            GoEvent
           </span>
         </div>
 
@@ -31,9 +31,9 @@ const Header = () => {
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
           <div className="hidden lg:flex items-center space-x-6">
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/home" className="text-sm font-medium hover:text-primary transition-colors">
               Esplora Eventi
-            </a>
+            </Link>
             <Link to="/host/create-event" className="text-sm font-medium hover:text-primary transition-colors">
               Diventa Host
             </Link>

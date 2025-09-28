@@ -7,14 +7,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
-                <Calendar className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                EventHub
-              </span>
-            </div>
+        <div className="flex items-center space-x-2">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+            <Calendar className="h-5 w-5 text-white" />
+          </div>
+          <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            GoEvent
+          </span>
+        </div>
             <p className="text-muted-foreground text-sm">
               La piattaforma italiana per scoprire e creare eventi straordinari. 
               Connetti le persone attraverso esperienze memorabili.
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2024 EventHub. Tutti i diritti riservati.
+              © 2024 GoEvent. Tutti i diritti riservati.
             </p>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Privacy</a>

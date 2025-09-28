@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import QRCodeGenerator from "@/components/QRCodeGenerator";
 import { 
   Calendar, MapPin, Clock, Users, Star, Heart, Share2, 
   ArrowLeft, ChevronDown, User, Shield, Wifi, Car, 
@@ -383,6 +385,27 @@ const EventDetail = () => {
                   <Button variant="outline" className="w-full">
                     Aggiungi al Carrello
                   </Button>
+                  
+                  {/* QR Code Generator */}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" className="w-full">
+                        📱 Genera QR Code
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-md">
+                      <DialogHeader>
+                        <DialogTitle>QR Code Evento</DialogTitle>
+                      </DialogHeader>
+                      <QRCodeGenerator 
+                        eventId={mockEvent.id}
+                        eventTitle={mockEvent.title}
+                        eventDate={mockEvent.date}
+                        eventLocation={mockEvent.location}
+                      />
+                    </DialogContent>
+                  </Dialog>
+                  
                   <p className="text-xs text-center text-muted-foreground">
                     Cancellazione gratuita fino a 24h prima dell'evento
                   </p>

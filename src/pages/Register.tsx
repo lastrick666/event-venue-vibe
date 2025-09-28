@@ -94,7 +94,7 @@ const Register = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-md mx-auto">
           {/* Back Button */}
-          <Link to="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
+          <Link to="/home" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Torna alla Home
           </Link>
@@ -106,7 +106,7 @@ const Register = () => {
                   <Calendar className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <CardTitle className="text-2xl font-bold">Unisciti a EventHub</CardTitle>
+              <CardTitle className="text-2xl font-bold">Unisciti a GoEvent</CardTitle>
               <CardDescription>
                 Crea il tuo account per iniziare a scoprire eventi fantastici
               </CardDescription>
@@ -306,19 +306,31 @@ const Register = () => {
                   </div>
                 </div>
 
-                <Button type="submit" className="w-full" variant="hero">
-                  {formData.accountType === "host" ? "Diventa Organizzatore" : "Crea Account"}
-                </Button>
-              </form>
+              <Button type="submit" className="w-full" variant="hero">
+                {formData.accountType === "host" ? "Diventa Organizzatore" : "Crea Account"}
+              </Button>
+            </form>
 
-              <div className="text-center">
-                <span className="text-sm text-muted-foreground">
-                  Hai già un account?{" "}
-                  <Link to="/login" className="text-primary hover:underline font-medium">
-                    Accedi qui
-                  </Link>
-                </span>
-              </div>
+            {/* Guest Access */}
+            <div className="text-center">
+              <Link to="/home">
+                <Button variant="outline" className="w-full">
+                  🎭 Accedi come Ospite
+                </Button>
+              </Link>
+              <p className="text-xs text-muted-foreground mt-2">
+                Esplora eventi senza registrarti
+              </p>
+            </div>
+
+            <div className="text-center">
+              <span className="text-sm text-muted-foreground">
+                Hai già un account?{" "}
+                <Link to="/login" className="text-primary hover:underline font-medium">
+                  Accedi qui
+                </Link>
+              </span>
+            </div>
             </CardContent>
           </Card>
         </div>

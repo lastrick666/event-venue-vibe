@@ -78,7 +78,7 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/#events">
+          <Link to="/home/#events">
             <Button variant="hero" size="lg">
               Esplora Eventi
             </Button>

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CategoryFilter from "@/components/CategoryFilter";
 import EventCard from "@/components/EventCard";
+import EventCarousel from "@/components/EventCarousel";
 import AdvancedFilters from "@/components/AdvancedFilters";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -115,8 +116,30 @@ const Index = () => {
       <Header />
       <HeroSection />
       
-      {/* Events Section */}
+      {/* Featured Events Carousel */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <EventCarousel 
+            events={mockEvents.slice(0, 6)}
+            title="Eventi in Evidenza"
+            subtitle="I più popolari della settimana"
+          />
+        </div>
+      </section>
+
+      {/* Recent Events Carousel */}
       <section className="py-12 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <EventCarousel 
+            events={mockEvents.slice(2, 8)}
+            title="Nuovi Eventi"
+            subtitle="Appena aggiunti alla piattaforma"
+          />
+        </div>
+      </section>
+      
+      {/* Events Section */}
+      <section id="events" className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4">
             <div>

@@ -46,13 +46,13 @@ const Header = () => {
             <Button variant="ghost" size="icon">
               <Heart className="h-4 w-4" />
             </Button>
-            <Link to="/profile">
+            <Link to="/login">
               <Button variant="outline" size="sm">
                 <User className="h-4 w-4 mr-2" />
                 Accedi
               </Button>
             </Link>
-            <Link to="/host/create-event">
+            <Link to="/register">
               <Button variant="hero" size="sm">
                 Registrati
               </Button>

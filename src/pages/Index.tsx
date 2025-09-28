@@ -117,7 +117,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Featured Events Carousel */}
-      <section className="py-12 bg-background">
+      <section className="py-16 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4">
           <EventCarousel 
             events={mockEvents.slice(0, 6)}
@@ -128,7 +128,7 @@ const Index = () => {
       </section>
 
       {/* Recent Events Carousel */}
-      <section className="py-12 bg-secondary/30">
+      <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <EventCarousel 
             events={mockEvents.slice(2, 8)}
@@ -139,28 +139,30 @@ const Index = () => {
       </section>
       
       {/* Events Section */}
-      <section id="events" className="py-12 bg-background">
+      <section id="events" className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4">
-            <div>
-              <h2 className="text-3xl font-bold mb-2">Eventi in Evidenza</h2>
-              <p className="text-muted-foreground">
-                Scopri gli eventi più popolari e coinvolgenti della settimana
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12 gap-6">
+            <div className="space-y-3">
+              <h2 className="text-4xl md:text-5xl font-black text-gradient">
+                Tutti gli Eventi
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-lg">
+                Scopri gli eventi più popolari e coinvolgenti della settimana nella tua città
               </p>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <CategoryFilter 
                 selectedCategory={selectedCategory}
                 onCategoryChange={setSelectedCategory}
               />
               
-              <div className="flex border border-border rounded-lg overflow-hidden">
+              <div className="flex border-2 border-border rounded-xl overflow-hidden shadow-soft">
                 <Button
                   variant={viewMode === "grid" ? "default" : "ghost"}
                   size="sm"
                   onClick={() => setViewMode("grid")}
-                  className="rounded-none"
+                  className="rounded-none border-r border-border"
                 >
                   <Grid3X3 className="h-4 w-4" />
                 </Button>
@@ -183,19 +185,23 @@ const Index = () => {
           {/* Events Grid */}
           <div className={
             viewMode === "grid" 
-              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-              : "space-y-4"
+              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              : "space-y-6"
           }>
             {filteredEvents.map((event) => (
-              <Link key={event.id} to={`/event/${event.id}`} className="block hover:scale-[1.02] transition-transform duration-200">
+              <Link key={event.id} to={`/event/${event.id}`} className="block group">
                 <EventCard {...event} />
               </Link>
             ))}
           </div>
 
           {/* Load More */}
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
+          <div className="text-center mt-16">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-large"
+            >
               Carica Altri Eventi
             </Button>
           </div>
@@ -203,22 +209,31 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary to-accent">
-        <div className="container mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Pronto a Creare il Tuo Evento?
+      <section className="py-20 bg-gradient-to-r from-primary via-accent to-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/20"></div>
+        <div className="container mx-auto px-4 text-center text-white relative z-10">
+          <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            Pronto a Creare il 
+            <span className="block text-white/90">Tuo Evento?</span>
           </h2>
-          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Unisciti a migliaia di organizzatori che hanno già scelto EventHub 
+          <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
+            Unisciti a migliaia di organizzatori che hanno già scelto GoEvent 
             per promuovere i loro eventi e raggiungere nuovi partecipanti.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/host/create-event">
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <Button 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-4 text-lg shadow-2xl"
+              >
                 Inizia Gratuitamente
               </Button>
             </Link>
-            <Button variant="secondary" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-2 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm bg-white/10 font-bold px-10 py-4 text-lg shadow-2xl"
+            >
               Scopri le Funzionalità
             </Button>
           </div>

@@ -30,27 +30,28 @@ const EventCard = ({
   isOnline = false,
 }: EventCardProps) => {
   return (
-    <div className="group bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+    <div className="bg-card rounded-2xl overflow-hidden shadow-large border border-border/50 hover:border-primary/30 hover:shadow-extra-large">
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <img 
           src={image} 
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute top-3 left-3">
-          <span className="px-2 py-1 bg-primary/90 text-primary-foreground text-xs font-medium rounded-full backdrop-blur">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1.5 bg-primary text-primary-foreground text-sm font-semibold rounded-full shadow-medium">
             {category}
           </span>
         </div>
-        <div className="absolute top-3 right-3">
-          <Button variant="ghost" size="icon" className="bg-white/80 hover:bg-white/90 backdrop-blur">
-            <Heart className="h-4 w-4 text-gray-700" />
+        <div className="absolute top-4 right-4">
+          <Button variant="ghost" size="icon" className="bg-white/90 hover:bg-white shadow-soft backdrop-blur-sm">
+            <Heart className="h-4 w-4 text-gray-600" />
           </Button>
         </div>
         {isOnline && (
-          <div className="absolute bottom-3 left-3">
-            <span className="px-2 py-1 bg-accent/90 text-accent-foreground text-xs font-medium rounded-full backdrop-blur">
+          <div className="absolute bottom-4 left-4">
+            <span className="px-3 py-1.5 bg-accent text-accent-foreground text-sm font-semibold rounded-full shadow-medium">
               Online
             </span>
           </div>
@@ -58,41 +59,44 @@ const EventCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-5 space-y-3">
-        <div>
-          <h3 className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors">
+      <div className="p-6 space-y-4">
+        <div className="space-y-2">
+          <h3 className="font-bold text-xl leading-tight text-foreground">
             {title}
           </h3>
-          <p className="text-sm text-muted-foreground mt-1">
+          <p className="text-muted-foreground font-medium">
             Organizzato da {organizer}
           </p>
         </div>
 
-        <div className="flex items-center text-sm text-muted-foreground">
-          <Star className="h-4 w-4 text-yellow-400 mr-1" />
-          <span className="font-medium">{rating}</span>
-          <span className="mx-2">•</span>
-          <Users className="h-4 w-4 mr-1" />
-          <span>{attendees} partecipanti</span>
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex items-center">
+            <Star className="h-4 w-4 text-yellow-500 mr-1" />
+            <span className="font-semibold text-foreground">{rating}</span>
+          </div>
+          <div className="flex items-center">
+            <Users className="h-4 w-4 text-primary mr-1" />
+            <span>{attendees}</span>
+          </div>
         </div>
 
-        <div className="space-y-2">
-          <div className="flex items-center text-sm">
-            <Calendar className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+        <div className="space-y-3">
+          <div className="flex items-center text-sm font-medium text-foreground">
+            <Calendar className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
             <span>{date} alle {time}</span>
           </div>
-          <div className="flex items-center text-sm">
-            <MapPin className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+          <div className="flex items-center text-sm font-medium text-foreground">
+            <MapPin className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
             <span className="truncate">{location}</span>
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex items-center justify-between pt-4 border-t border-border">
           <div>
-            <span className="text-lg font-bold text-primary">{price}</span>
+            <span className="text-2xl font-black text-primary">{price}</span>
             <span className="text-sm text-muted-foreground ml-1">a persona</span>
           </div>
-          <Button variant="accent" size="sm">
+          <Button className="bg-gradient-to-r from-primary to-accent text-white font-semibold px-6 shadow-medium">
             Prenota
           </Button>
         </div>

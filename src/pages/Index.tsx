@@ -190,9 +190,11 @@ const Index = () => {
             per promuovere i loro eventi e raggiungere nuovi partecipanti.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-              Inizia Gratuitamente
-            </Button>
+            <Link to="/host/create-event">
+              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+                Inizia Gratuitamente
+              </Button>
+            </Link>
             <Button variant="secondary" size="lg">
               Scopri le Funzionalità
             </Button>

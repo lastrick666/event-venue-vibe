@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -132,10 +133,11 @@ const HostDashboard = () => {
               <Settings className="h-4 w-4 mr-2" />
               Impostazioni
             </Button>
-            <Button variant="hero">
-              <Plus className="h-4 w-4 mr-2" />
-              Nuovo Evento
-            </Button>
+            <Link to="/host/create-event">
+              <Button variant="hero">
+                Crea Nuovo Evento
+              </Button>
+            </Link>
           </div>
         </div>
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -336,12 +337,14 @@ const Profile = () => {
 
               <TabsContent value="organized" className="mt-6">
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-bold">Eventi Organizzati</h2>
-                    <Button variant="hero">
-                      Crea Nuovo Evento
-                    </Button>
-                  </div>
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl font-bold">Eventi Organizzati</h2>
+                <Link to="/host/create-event">
+                  <Button variant="hero">
+                    Crea Nuovo Evento
+                  </Button>
+                </Link>
+              </div>
                   
                   <div className="text-center py-12">
                     <Users className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
@@ -349,7 +352,9 @@ const Profile = () => {
                     <p className="text-muted-foreground mb-4">
                       Inizia a organizzare eventi per la tua community
                     </p>
+                  <Link to="/host/create-event">
                     <Button variant="hero">Crea il Tuo Primo Evento</Button>
+                  </Link>
                   </div>
                 </div>
               </TabsContent>

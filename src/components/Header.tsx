@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Search, User, Calendar, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -33,9 +34,9 @@ const Header = () => {
             <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
               Esplora Eventi
             </a>
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/host/create-event" className="text-sm font-medium hover:text-primary transition-colors">
               Diventa Host
-            </a>
+            </Link>
             <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
               Aiuto
             </a>
@@ -45,13 +46,17 @@ const Header = () => {
             <Button variant="ghost" size="icon">
               <Heart className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="sm">
-              <User className="h-4 w-4 mr-2" />
-              Accedi
-            </Button>
-            <Button variant="hero" size="sm">
-              Registrati
-            </Button>
+            <Link to="/profile">
+              <Button variant="outline" size="sm">
+                <User className="h-4 w-4 mr-2" />
+                Accedi
+              </Button>
+            </Link>
+            <Link to="/host/create-event">
+              <Button variant="hero" size="sm">
+                Registrati
+              </Button>
+            </Link>
           </div>
         </nav>
       </div>

@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import EventDetail from "./pages/EventDetail";
 import Profile from "./pages/Profile";
 import HostDashboard from "./pages/HostDashboard";
+import CreateEvent from "./pages/CreateEvent";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/event/:id" element={<EventDetail />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/host/dashboard" element={<HostDashboard />} />
+          <Route path="/host/create-event" element={<CreateEvent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

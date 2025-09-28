@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Search, MapPin, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-events.jpg";
 
 const HeroSection = () => {
@@ -77,12 +78,16 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="hero" size="lg">
-            Esplora Eventi
-          </Button>
-          <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-            Organizza un Evento
-          </Button>
+          <Link to="/#events">
+            <Button variant="hero" size="lg">
+              Esplora Eventi
+            </Button>
+          </Link>
+          <Link to="/host/create-event">
+            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              Organizza un Evento
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

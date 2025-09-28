@@ -7,14 +7,14 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link to="/home" className="flex items-center space-x-3 group cursor-pointer">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-primary to-accent flex items-center justify-center shadow-lg">
-            <Calendar className="h-6 w-6 text-white" />
+        <div className="flex items-center space-x-2">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+            <Calendar className="h-5 w-5 text-white" />
           </div>
-          <span className="font-bold text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             GoEvent
           </span>
-        </Link>
+        </div>
 
         {/* Search Bar */}
         <div className="hidden md:flex flex-1 max-w-lg mx-8">
@@ -23,37 +23,37 @@ const Header = () => {
             <input
               type="text"
               placeholder="Cerca eventi, categorie, location..."
-              className="w-full h-10 pl-12 pr-4 rounded-full border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+              className="w-full h-10 pl-10 pr-4 rounded-full border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
             />
           </div>
         </div>
 
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
-          <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/home" className="text-sm font-semibold text-foreground hover:text-primary">
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link to="/home" className="text-sm font-medium hover:text-primary transition-colors">
               Esplora Eventi
             </Link>
-            <Link to="/host/create-event" className="text-sm font-semibold text-foreground hover:text-primary">
+            <Link to="/host/create-event" className="text-sm font-medium hover:text-primary transition-colors">
               Diventa Host
             </Link>
-            <a href="#" className="text-sm font-semibold text-foreground hover:text-primary">
+            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
               Aiuto
             </a>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+          <div className="flex items-center space-x-2">
+            <Button variant="ghost" size="icon">
               <Heart className="h-4 w-4" />
             </Button>
             <Link to="/login">
-              <Button variant="outline" size="sm" className="border-2">
+              <Button variant="outline" size="sm">
                 <User className="h-4 w-4 mr-2" />
                 Accedi
               </Button>
             </Link>
             <Link to="/register">
-              <Button variant="default" size="sm" className="bg-gradient-to-r from-primary to-accent text-white font-semibold px-6">
+              <Button variant="hero" size="sm">
                 Registrati
               </Button>
             </Link>

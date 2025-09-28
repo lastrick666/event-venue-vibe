@@ -18,13 +18,13 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container px-4 text-center text-white">
-        <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           Scopri Eventi
-          <span className="block bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-accent to-accent-glow bg-clip-text text-transparent">
             Straordinari
           </span>
         </h1>
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-white/95 font-light leading-relaxed">
+        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/90">
           Dalla musica dal vivo ai workshop creativi, trova e partecipa agli eventi 
           più coinvolgenti nella tua città o online.
         </p>
@@ -39,7 +39,7 @@ const HeroSection = () => {
                 <input
                   type="text"
                   placeholder="Concerti, workshop..."
-                  className="w-full pl-12 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+                  className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
                 />
               </div>
             </div>
@@ -51,7 +51,7 @@ const HeroSection = () => {
                 <input
                   type="text"
                   placeholder="Milano, Roma..."
-                  className="w-full pl-12 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+                  className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
                 />
               </div>
             </div>
@@ -62,14 +62,14 @@ const HeroSection = () => {
                 <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <input
                   type="date"
-                  className="w-full pl-12 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+                  className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
                 />
               </div>
             </div>
             
             <div className="flex items-end">
-              <Button className="w-full py-3 bg-gradient-to-r from-primary to-accent text-white font-semibold text-base shadow-xl">
-                <Search className="h-5 w-5 mr-2" />
+              <Button variant="hero" className="w-full py-2.5">
+                <Search className="h-4 w-4 mr-2" />
                 Cerca Eventi
               </Button>
             </div>
@@ -77,19 +77,14 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/home/#events">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white font-bold px-8 py-4 text-lg shadow-2xl">
+            <Button variant="hero" size="lg">
               Esplora Eventi
             </Button>
           </Link>
           <Link to="/host/create-event">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm bg-white/10 font-bold px-8 py-4 text-lg shadow-2xl"
-            >
-              <Calendar className="h-5 w-5 mr-3" />
+            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
               Organizza un Evento
             </Button>
           </Link>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Search, User, Calendar, Heart } from "lucide-react";
+import { Search, User, MapPin, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -7,11 +7,9 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
-            <Calendar className="h-5 w-5 text-white" />
-          </div>
-          <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <div className="flex items-center space-x-3">
+          <MapPin className="h-8 w-8 text-foreground" />
+          <span className="font-bold text-2xl text-foreground">
             GoEvent
           </span>
         </div>

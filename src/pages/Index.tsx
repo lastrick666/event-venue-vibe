@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CategoryFilter from "@/components/CategoryFilter";
 import EventCard from "@/components/EventCard";
+import AdvancedFilters from "@/components/AdvancedFilters";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SlidersHorizontal, Grid3X3, List } from "lucide-react";
@@ -149,10 +151,9 @@ const Index = () => {
                 </Button>
               </div>
               
-              <Button variant="outline" size="sm">
-                <SlidersHorizontal className="h-4 w-4 mr-2" />
-                Filtri
-              </Button>
+              <AdvancedFilters 
+                onFiltersChange={(filters) => console.log('Filters:', filters)}
+              />
             </div>
           </div>
 
@@ -163,7 +164,9 @@ const Index = () => {
               : "space-y-4"
           }>
             {filteredEvents.map((event) => (
-              <EventCard key={event.id} {...event} />
+              <Link key={event.id} to={`/event/${event.id}`} className="block hover:scale-[1.02] transition-transform duration-200">
+                <EventCard {...event} />
+              </Link>
             ))}
           </div>
 

@@ -23,7 +23,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Cerca eventi, categorie, location..."
-              className="w-full h-10 pl-10 pr-4 rounded-full border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+              className="w-full h-10 pl-12 pr-4 rounded-full border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
             />
           </div>
         </div>

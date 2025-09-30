@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src={logoRevent} 
                 alt="Revent" 
-                className="h-10 w-auto"
+                className="h-10 w-auto rounded-xl"
                 style={{
                   filter: 'drop-shadow(0 0 8px hsl(var(--primary)))'
                 }}

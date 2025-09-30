@@ -72,7 +72,7 @@ const Login = () => {
                 <img 
                   src={logoRevent} 
                   alt="Revent" 
-                  className="h-16 w-auto"
+                  className="h-16 w-auto rounded-xl"
                   style={{
                     filter: 'drop-shadow(0 0 8px hsl(var(--primary)))'
                   }}

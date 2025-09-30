@@ -89,7 +89,7 @@ const EventPreview = ({ eventData }: EventPreviewProps) => {
                     <span className="font-medium">Nuovo evento</span>
                   </div>
                   <span>•</span>
-                  <span>GoEvent Verified</span>
+                  <span>Revent Verified</span>
                 </div>
               </div>
             </div>

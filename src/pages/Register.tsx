@@ -11,9 +11,10 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { 
-  Calendar, Mail, Lock, Eye, EyeOff, User, 
+  Mail, Lock, Eye, EyeOff, User, Users,
   Facebook, ArrowLeft, MapPin 
 } from "lucide-react";
+import logoRevent from "@/assets/logo-revent.png";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -102,11 +103,16 @@ const Register = () => {
           <Card className="w-full">
             <CardHeader className="space-y-1 text-center">
               <div className="flex items-center justify-center mb-4">
-                <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
-                  <Calendar className="h-6 w-6 text-white" />
-                </div>
+                <img 
+                  src={logoRevent} 
+                  alt="Revent" 
+                  className="h-16 w-auto"
+                  style={{
+                    filter: 'drop-shadow(0 0 8px hsl(var(--primary)))'
+                  }}
+                />
               </div>
-              <CardTitle className="text-2xl font-bold">Unisciti a GoEvent</CardTitle>
+              <CardTitle className="text-2xl font-bold">Unisciti a Revent</CardTitle>
               <CardDescription>
                 Crea il tuo account per iniziare a scoprire eventi fantastici
               </CardDescription>
@@ -132,7 +138,7 @@ const Register = () => {
                     onClick={() => setFormData({...formData, accountType: "host"})}
                   >
                     <CardContent className="p-4 text-center">
-                      <Calendar className="h-6 w-6 mx-auto mb-2 text-primary" />
+                      <Users className="h-6 w-6 mx-auto mb-2 text-primary" />
                       <h4 className="font-medium text-sm">Organizzatore</h4>
                     </CardContent>
                   </Card>

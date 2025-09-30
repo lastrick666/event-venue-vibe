@@ -9,9 +9,10 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { 
-  Calendar, Mail, Lock, Eye, EyeOff, 
+  Mail, Lock, Eye, EyeOff, 
   Facebook, Github, ArrowLeft 
 } from "lucide-react";
+import logoRevent from "@/assets/logo-revent.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -68,13 +69,18 @@ const Login = () => {
           <Card className="w-full">
             <CardHeader className="space-y-1 text-center">
               <div className="flex items-center justify-center mb-4">
-                <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
-                  <Calendar className="h-6 w-6 text-white" />
-                </div>
+                <img 
+                  src={logoRevent} 
+                  alt="Revent" 
+                  className="h-16 w-auto"
+                  style={{
+                    filter: 'drop-shadow(0 0 8px hsl(var(--primary)))'
+                  }}
+                />
               </div>
               <CardTitle className="text-2xl font-bold">Bentornato!</CardTitle>
               <CardDescription>
-                Accedi al tuo account GoEvent per continuare
+                Accedi al tuo account Revent per continuare
               </CardDescription>
             </CardHeader>
             
